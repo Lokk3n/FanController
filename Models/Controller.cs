@@ -44,7 +44,11 @@ namespace FanController.Models
         {
             isConnected = true;
             port = new SerialPort(selectedPort, 9600, Parity.None, 8, StopBits.One);
-            port.Open();
+            try
+            {
+                port.Open();
+            }
+            catch { }
         }
 
         private void disconnectFromArduino()
@@ -60,7 +64,7 @@ namespace FanController.Models
             //Console.WriteLine("Sending: " + arduinoValue.ToString());
 
             string _send = "#UPDATE" + _percentage.ToString() + "\n";
-            port.Write(_send);
+            if(port.IsOpen) port.Write(_send);
             //Console.WriteLine("Sent: " + _send);
         }
     }
