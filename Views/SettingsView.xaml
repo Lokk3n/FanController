@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="FanController.Views.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Label Content="GPU current temperature: "/>
+            <TextBlock Text="{Binding Path=temperature}" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Label Content="GPU locked temperature: "/>
+            <TextBlock Text="{Binding Path=lockedTemperature}" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Label Content="PWM signal: "/>
+            <TextBlock Text="{Binding Path=voltagePWM}" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <Label Content="Fan RPM: "/>
+            <TextBlock Text="{Binding Path=fanSpeed}" VerticalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

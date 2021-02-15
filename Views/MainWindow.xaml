@@ -1,0 +1,18 @@
+﻿<Window x:Class="FanController.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize" 
+        Closing="OnClose" StateChanged="OnStateChanged" IsVisibleChanged="OnIsVisibleChanged" Icon="/FanController;component/Icons/fan.ico" Visibility="Hidden" Initialized="OnInitialized"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ContentControl Grid.Row="0"  prism:RegionManager.RegionName="ContentRegion" />
+        <ContentControl Grid.Row="1"  prism:RegionManager.RegionName="ContentRegion2" />
+        
+    </Grid>
+</Window>
